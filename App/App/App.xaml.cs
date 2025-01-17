@@ -1,12 +1,18 @@
-﻿namespace App
+﻿using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+
+namespace App
 {
-    public partial class App : Application
+    public partial class App
     {
         public App()
         {
             InitializeComponent();
+        }
 
-            MainPage = new MainPage();
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
+            return new Window(new NavigationPage(new MainPage()));
         }
     }
 }
